@@ -1,5 +1,7 @@
 # JazzInTheBay
 
+[![Build Status](https://travis-ci.com/ahnafy/JazzInTheBay.svg?token=zHcMdCkA6PdsLZg2hsyF&branch=master)](https://travis-ci.org/ahnafy/JazzInTheBay)
+
 ## Product Vision
 
 For a user considering going to a jazz show in the bay area, we want to build the go-to destination for discovering, selecting, and (in the future) buying tickets for a show within 10 mins. For this, we need the following:
