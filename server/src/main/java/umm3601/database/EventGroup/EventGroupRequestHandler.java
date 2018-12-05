@@ -83,7 +83,7 @@ public class EventGroupRequestHandler {
                     String userID = dbO.getString("userID");
                     String purpose = dbO.getString("purpose");
                     String category = dbO.getString("category");
-                    String name = dbO.getString("name");
+                    String musicGroupName = dbO.getString("musicGroupName");
                     Boolean status = dbO.getBoolean("status");
                     String frequency = dbO.getString("frequency");
                     String start = dbO.getString("start");
@@ -91,9 +91,9 @@ public class EventGroupRequestHandler {
                     String next = dbO.getString("next");
 
                     System.err.println("Adding new eventGroup for user "+ userID + " [purpose=" + purpose + ", category=" +
-                            category + " name=" + name + " status=" + status + ", frequency= " + frequency +
+                            category + " musicGroupName=" + musicGroupName + " status=" + status + ", frequency= " + frequency +
                             ", start=" + start + ", end=" + end + ", next=" + next + ']');
-                    return eventGroupController.addNewEventGroup(userID, purpose, category, name, status, frequency, start, end, next).toString();
+                    return eventGroupController.addNewEventGroup(userID, purpose, category, musicGroupName, status, frequency, start, end, next).toString();
                 } catch (NullPointerException e) {
                     System.err.println("A value was malformed or omitted, new item request failed.");
                     return null;
@@ -128,14 +128,14 @@ public class EventGroupRequestHandler {
                     String id = dbO.getString("_id");
                     String purpose = dbO.getString("purpose");
                     String category = dbO.getString("category");
-                    String name = dbO.getString("name");
+                    String musicGroupName = dbO.getString("musicGroupName");
                     Boolean status = dbO.getBoolean("status");
                     String frequency = dbO.getString("frequency");
                     String start = dbO.getString("start");
                     String end = dbO.getString("end");
                     String next = dbO.getString("next");
 
-                    return eventGroupController.editEventGroup(id, purpose, category, name, status, frequency, start, end, next).toString();
+                    return eventGroupController.editEventGroup(id, purpose, category, musicGroupName, status, frequency, start, end, next).toString();
                 } catch (NullPointerException e) {
                     System.err.println("A value was malformed or omitted, new item request failed.");
                     return null;

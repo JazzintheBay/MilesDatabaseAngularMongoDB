@@ -95,13 +95,13 @@ public class EventGroupController {
             filterDoc = filterDoc.append("category", contentRegQuery);
         }
 
-        // name is the title of the eventGroup
-        if (queryParams.containsKey("name")) {
-            String targetContent = (queryParams.get("name")[0]);
+        // musicGroupName is the title of the eventGroup
+        if (queryParams.containsKey("musicGroupName")) {
+            String targetContent = (queryParams.get("musicGroupName")[0]);
             Document contentRegQuery = new Document();
             contentRegQuery.append("$regex", targetContent);
             contentRegQuery.append("$options", "i");
-            filterDoc = filterDoc.append("name", contentRegQuery);
+            filterDoc = filterDoc.append("musicGroupName", contentRegQuery);
         }
 
         if (queryParams.containsKey("status")) {
@@ -116,7 +116,7 @@ public class EventGroupController {
     }
 
 
-    public String addNewEventGroup(String userID, String purpose, String category, String name,
+    public String addNewEventGroup(String userID, String purpose, String category, String musicGroupName,
                              Boolean status, String frequency, String start, String end, String next) {
 
         // makes the search Document key-pairs
@@ -124,7 +124,7 @@ public class EventGroupController {
         newEventGroup.append("userID", userID);
         newEventGroup.append("purpose", purpose);
         newEventGroup.append("category", category);
-        newEventGroup.append("name", name);
+        newEventGroup.append("musicGroupName", musicGroupName);
         newEventGroup.append("status", status);
         newEventGroup.append("frequency", frequency);
         newEventGroup.append("start", start);
@@ -136,7 +136,7 @@ public class EventGroupController {
             ObjectId id = newEventGroup.getObjectId("_id");
 
             System.err.println("Successfully added new eventGroup " + userID + " [_id=" + id + ", purpose=" + purpose +
-                    ", category=" + category + ", name=" + name + ", frequency= "+ frequency +  ", start=" + start +
+                    ", category=" + category + ", musicGroupName=" + musicGroupName + ", frequency= "+ frequency +  ", start=" + start +
                     ", end=" + end + ", next=" + next +']');
             return JSON.serialize(id);
         } catch(MongoException me) {
@@ -146,12 +146,12 @@ public class EventGroupController {
     }
 
     public String editEventGroup(String id, String purpose, String category,
-                           String name, Boolean status, String frequency, String start,
+                           String musicGroupName, Boolean status, String frequency, String start,
                            String end, String next){
         Document newEventGroup = new Document();
         newEventGroup.append("purpose", purpose);
         newEventGroup.append("category", category);
-        newEventGroup.append("name", name);
+        newEventGroup.append("musicGroupName", musicGroupName);
         newEventGroup.append("status", status);
         newEventGroup.append("frequency", frequency);
         newEventGroup.append("start", start);
