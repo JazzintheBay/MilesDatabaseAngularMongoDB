@@ -32,89 +32,129 @@ We will build an extensible architecture, which will allow us to launch an MVP q
 ### Schema for Shows:
 
 ```
-EventGroup (array of repeated events)
-EventGroupID
-Event
-EventID
-EventName
-Headline
-MusicFestival
-FestivalID
-FestivalName
-Year
-Image (array)
-doorTime
-startTime
-endTime
-Performer
-MusicGroup (array)
-MusicGroupID
-MusicGroupName
-Weblinks
-URLType (Website/FB/Twitter etc.)
-URL
-MusicCategory (array)
-MusicGroupType (array)
-MusicGroupTags (array)
-GroupLead (array)
-ArtistID
-ArtistName
-ArtistRole (array)
-Instruments (array)
-Awards (array)
-Type (award or nomination)
-AwardName
-AwardCategory
-Year
-MusicGroupMember (array)
-ArtistID
-ArtistName
-ArtistRole (array)
-Instruments (array)
-Awards (array)
-Type (award or nomination)
-AwardName
-AwardCategory
-Year
-Awards (array)
-Type (award or nomination)
-AwardName
-AwardCategory
-Year
-Reviews (array)
-Excerpt
-Reviewer
-URL
-Location
-VenueID
-VenueName
-VenueTags (array)
-Weblinks
-URLType (Website/FB/Spotify etc.)
-URL
-Address
-Street
-Building
-City
-State
-ZipCode
-Country
-MapsURL (array for GoogleMaps, AppleMaps etc.)
-Ticket
-TicketURL
-TicketPrice
-LowPrice
-HighPrice
-DiscountTags (array for indicating discounts for Students, Members etc.)
-EventSourceURL
-ShowcaseContent
-ContentType (Youtube, Spotify, SoundCloud etc.)
-ContentURL
-EventDescription
-EventAlbum (array)
-AlbumID
-AlbumName
-AlbumURL
+{
+  "EventGroup": {
+    "EventGroupID": {},
+    "Event": [
+      {
+        "EventID": {},
+        "EventName": {},
+        "Headline": {},
+        "MusicFestival": {
+          "FestivalID": {},
+          "FestivalName": {},
+          "Year": {},
+          "Image": [],
+          "doorTime": {},
+          "startTime": {},
+          "endTime": {}
+        },
+        "Performer": {
+          "MusicGroup": [
+            {
+              "MusicGroupID": {},
+              "MusicGroupName": {},
+              "Weblinks": {
+                "URLType": {},
+                "URL": {}
+              },
+              "MusicCategory": [],
+              "MusicGroupType": [],
+              "MusicGroupTags": [],
+              "GroupLead": [
+                {
+                  "ArtistID": {},
+                  "ArtistName": {},
+                  "ArtistRole": [],
+                  "Instruments": [],
+                  "Awards": [
+                    {
+                      "Type": {},
+                      "AwardName": {},
+                      "AwardCategory": {},
+                      "Year": {}
+                    }
+                  ]
+                }
+              ],
+              "MusicGroupMember": [
+                {
+                  "ArtistID": {},
+                  "ArtistName": {},
+                  "ArtistRole": [],
+                  "Instruments": [],
+                  "Awards": [
+                    {
+                      "Type": {},
+                      "AwardName": {},
+                      "AwardCategory": {},
+                      "Year": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "Awards": [
+            {
+              "Type(award or nomination)": {},
+              "AwardName": {},
+              "AwardCategory": {},
+              "Year": {}
+            }
+          ],
+          "Review": [
+            {
+              "Excerpt": {},
+              "Reviewer": {},
+              "URL": {}
+            }
+          ]
+        },
+        "Location": {
+          "VenueID": {},
+          "VenueName": {},
+          "VenueTags(array)": {},
+          "Weblinks": {
+            "URL": {}
+          },
+          "Address": {
+            "Street": {},
+            "Building": {},
+            "City": {},
+            "State": {},
+            "ZipCode": {},
+            "Country": {},
+            "MapsURL": []
+          }
+        },
+        "Ticket": {
+          "TicketURL": {},
+          "TicketPrice": {
+            "LowPrice": {},
+            "HighPrice": {},
+            "DiscountTags": []
+          }
+        },
+        "EventSourceURL": {},
+        "ShowcaseContent": {
+          "ContentType": {},
+          "ContentURL": {}
+        },
+        "EventDescription": {},
+        "EventAlbum": [
+          {
+            "AlbumID": {},
+            "AlbumName": {},
+            "AlbumURL": {}
+          }
+        ]
+      }
+    ]
+  },
+  "URLType(Website/FB/Spotify etc.)": {}
+}
+
 ```
 
 ### Schema for MusicGroups
