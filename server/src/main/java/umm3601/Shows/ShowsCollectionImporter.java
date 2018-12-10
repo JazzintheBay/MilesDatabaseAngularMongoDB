@@ -156,6 +156,9 @@ public class ShowsCollectionImporter {
 
             collection.insert(dbObject);
 
+            //Object Schema looks like:
+            
+
             DBCursor cursorDoc = collection.find();
             while (cursorDoc.hasNext()) {
                 System.out.println(cursorDoc.next());
