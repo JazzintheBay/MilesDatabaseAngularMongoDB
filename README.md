@@ -1,6 +1,6 @@
 # JazzInTheBay
 
-[![Build Status](https://travis-ci.com/JazzintheBay/JazzintheBay.svg?token=zHcMdCkA6PdsLZg2hsyF&branch=master)](https://travis-ci.org/JazzintheBay/JazzintheBay)
+[![Build Status](https://travis-ci.org/JazzintheBay/JazzintheBay.svg?branch=master)](https://travis-ci.org/JazzintheBay/JazzintheBay)
 
 ## Product Vision
 
