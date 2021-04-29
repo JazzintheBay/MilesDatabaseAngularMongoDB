@@ -1,0 +1,14 @@
+version: 2
+updates:
+- package-ecosystem: gradle
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: junit:junit
+    versions:
+    - 4.13.1
+  - dependency-name: org.mongodb:mongodb-driver
+    versions:
+    - 3.12.7
